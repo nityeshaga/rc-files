@@ -30,3 +30,6 @@ nnoremap <C-H> <C-W><C-H>
 
 "color scheme default
 colorscheme morning
+
+"mapping for inserting a single character
+:nnoremap <Space> i_<Esc>r

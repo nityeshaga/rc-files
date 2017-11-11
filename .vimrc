@@ -29,7 +29,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "color scheme default
-colorscheme morning
+colorscheme blue
 
 "mapping for inserting a single character
 :nnoremap <Space> i_<Esc>r

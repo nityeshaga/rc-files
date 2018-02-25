@@ -1,0 +1,93 @@
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+Plugin 'tmhedberg/SimpylFold'
+
+" See the docstrings of the folded code
+let g:SimpylFold_docstring_preview=1
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/nerdtree'
+
+Bundle 'Valloric/YouCompleteMe'
+
+" The former line ensures that the autocomplete window goes away when 
+" you’re done with it, and the latter defines a shortcut for goto definition.
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoTo<CR>
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+
+
+
+"turn on auto indentation
+set autoindent
+
+"show current cursor position on lower right side of screen
+set ruler
+
+"
+"filetype plugin indent on
+
+"pressing tab is equivalent to 4 blanks
+set tabstop=4
+
+"pressing >> or << is equivalent to 4 blanks
+set shiftwidth=4
+
+"set incremental search on
+set incsearch
+
+"set absolute number for current line
+set number
+
+" set relative line numbering
+set relativenumber
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"color scheme default
+colorscheme morning
+
+"mapping for inserting a single character
+":nnoremap <Space> i_<Esc>r
+
+"for ctags
+set tags=tags;
+
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+"always view the status line
+set laststatus=2
+
+"always show the full path of current file
+set statusline+=%F
+set statusline+=col:\ %c,
